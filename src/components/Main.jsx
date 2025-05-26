@@ -6,7 +6,7 @@ export default function Main() {
   const [articleList, setArticleList] = useState([
     "Articolo di Cronaca",
     "Articolo d'Opinione",
-    "Articolo Culturale o Speciaistico",
+    "Articolo Culturale o Specialistico",
     "Articolo di Informazione",
     "Articolo di critica",
   ]);
