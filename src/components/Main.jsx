@@ -27,9 +27,9 @@ export default function Main() {
   };
 
   return (
-    <main className="container mt-4">
-      <div className="d-flex mb-3">
-        <form onSubmit={handleFormSubmit}>
+    <main className="container mt-4 d-flex justify-content-center align-items-center flex-column gap-2">
+      <div className="mb-3">
+        <form className="d-flex flex-column" onSubmit={handleFormSubmit}>
           <input
             type="text"
             value={newArticle}
