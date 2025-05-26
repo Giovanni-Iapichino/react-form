@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Main() {
   const [articleList, setArticleList] = useState([
@@ -15,6 +17,13 @@ export default function Main() {
     const newArticleList = [...articleList, newArticle];
     setArticleList(newArticleList);
     setNewArticle("");
+  };
+
+  const handleDelete = (indexToRemove) => {
+    const updatedList = articleList.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setArticleList(updatedList);
   };
 
   return (
@@ -39,6 +48,12 @@ export default function Main() {
         {articleList.map((title, index) => (
           <li key={index} className="list-group-item">
             {title}
+            <FontAwesomeIcon
+              className="ms-2"
+              icon={faTrash}
+              style={{ cursor: "pointer", color: "grey" }}
+              onClick={() => handleDelete(index)}
+            />
           </li>
         ))}
       </ul>
